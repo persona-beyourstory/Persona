@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PERSONA — Shop the Drop</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+
+<svg width="0" height="0" style="display:none;">
+  <symbol id="base-mannequin" viewBox="0 0 500 500">
+    </symbol>
+</svg>
+
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<nav>
+  <a class="nav-logo" href="index.html">Persona.</a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#drops">Drops</a></li>
+    <li><a href="index.html#how">How it works</a></li>
+    <li><a href="#" style="color:var(--gold)">Shop</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <h1>The <em>Collection.</em></h1>
+  <div class="page-header-meta">
+    <p>All designs · Limited stock</p>
+    <span>₹799</span>
+    <p style="margin-top:4px">Free shipping above ₹1499</p>
+  </div>
+</div>
+
+<div class="filter-bar">
+  <span class="filter-label">Filter ·</span>
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="batman">Batman</button>
+  <button class="filter-btn" data-filter="joker">Joker</button>
+  <button class="filter-btn" data-filter="marvel">Marvel</button>
+  <button class="filter-btn" data-filter="deadpool">Deadpool</button>
+  <button class="filter-btn" data-filter="loki">Loki</button>
+</div>
+
+<div class="shop-grid" id="shopGrid">
+
+  <div class="product-card" data-filter="batman" data-index="0" onclick="openModal(0)">
+    <div class="product-card-img">
+      <img src="2.jpg" alt="Batman Drop"/>
+      <div class="mannequin-preview">
+        <span class="preview-hint">Hover to explore</span>
+        <div class="mannequin-svg-wrap" id="msvg-0" style="color: #111111;">
+          <svg viewBox="0 0 500 500"><use href="#base-mannequin"></use></svg>
+          <img src="3.jpg" class="design-decal" alt="Batman Decal" />
+        </div>
+      </div>
+    </div>
+    <div class="product-info">
+      <p class="product-universe">DC UNIVERSE</p>
+      <h3 class="product-name">The Dark Knight</h3>
+      <p class="product-price">₹799</p>
+      <div class="size-row">
+        <button class="size-btn">S</button>
+        <button class="size-btn selected">M</button>
+        <button class="size-btn">L</button>
+        <button class="size-btn">XL</button>
+      </div>
+      <button class="add-btn" onclick="addToCart(event, 'The Dark Knight')">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="product-card" data-filter="joker" data-index="1" onclick="openModal(1)">
+    <div class="product-card-img">
+      <img src="5.jpg" alt="Joker Drop"/>
+      <div class="mannequin-preview">
+        <span class="preview-hint">Hover to explore</span>
+        <div class="mannequin-svg-wrap" id="msvg-1" style="color: #f5f0e8;">
+          <svg viewBox="0 0 500 500"><use href="#base-mannequin"></use></svg>
+          <img src="Joker design.jpg" class="design-decal" alt="Joker Decal" />
+        </div>
+      </div>
+    </div>
+    <div class="product-info">
+      <p class="product-universe">DC UNIVERSE</p>
+      <h3 class="product-name">The Clown Prince</h3>
+      <p class="product-price">₹799</p>
+      <div class="size-row">
+        <button class="size-btn">S</button>
+        <button class="size-btn selected">M</button>
+        <button class="size-btn">L</button>
+        <button class="size-btn">XL</button>
+      </div>
+      <button class="add-btn" onclick="addToCart(event, 'The Clown Prince')">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="product-card" data-filter="marvel" data-index="2" onclick="openModal(2)">
+    <div class="product-card-img">
+      <img src="8.jpg" alt="Marvel Drop"/>
+      <div class="mannequin-preview">
+        <span class="preview-hint">Hover to explore</span>
+        <div class="mannequin-svg-wrap" id="msvg-2" style="color: #111111;">
+          <svg viewBox="0 0 500 500"><use href="#base-mannequin"></use></svg>
+          <img src="9.jpg" class="design-decal" alt="Marvel Decal" />
+        </div>
+      </div>
+    </div>
+    <div class="product-info">
+      <p class="product-universe">MARVEL UNIVERSE</p>
+      <h3 class="product-name">Avenger Classic</h3>
+      <p class="product-price">₹799</p>
+      <div class="size-row">
+        <button class="size-btn">S</button>
+        <button class="size-btn">M</button>
+        <button class="size-btn selected">L</button>
+        <button class="size-btn">XL</button>
+      </div>
+      <button class="add-btn" onclick="addToCart(event, 'Avenger Classic')">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="product-card" data-filter="deadpool" data-index="3" onclick="openModal(3)">
+    <div class="product-card-img">
+      <img src="11.jpg" alt="Deadpool Drop"/>
+      <div class="mannequin-preview">
+        <span class="preview-hint">Hover to explore</span>
+        <div class="mannequin-svg-wrap" id="msvg-3" style="color: #f5f0e8;">
+          <svg viewBox="0 0 500 500"><use href="#base-mannequin"></use></svg>
+          <img src="12.jpg" class="design-decal" alt="Deadpool Decal" />
+        </div>
+      </div>
+    </div>
+    <div class="product-info">
+      <p class="product-universe">MARVEL UNIVERSE</p>
+      <h3 class="product-name">Merc With a Mouth</h3>
+      <p class="product-price">₹799</p>
+      <div class="size-row">
+        <button class="size-btn selected">S</button>
+        <button class="size-btn">M</button>
+        <button class="size-btn">L</button>
+        <button class="size-btn">XL</button>
+      </div>
+      <button class="add-btn" onclick="addToCart(event, 'Merc With a Mouth')">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="product-card" data-filter="loki" data-index="4" onclick="openModal(4)">
+    <div class="product-card-img">
+      <img src="14.jpg" alt="Loki Drop"/>
+      <div class="mannequin-preview">
+        <span class="preview-hint">Hover to explore</span>
+        <div class="mannequin-svg-wrap" id="msvg-4" style="color: #111111;">
+          <svg viewBox="0 0 500 500"><use href="#base-mannequin"></use></svg>
+          <img src="15.jpg" class="design-decal" alt="Loki Decal" />
+        </div>
+      </div>
+    </div>
+    <div class="product-info">
+      <p class="product-universe">MARVEL UNIVERSE</p>
+      <h3 class="product-name">God of Mischief</h3>
+      <p class="product-price">₹799</p>
+      <div class="size-row">
+        <button class="size-btn">S</button>
+        <button class="size-btn">M</button>
+        <button class="size-btn selected">L</button>
+        <button class="size-btn">XL</button>
+      </div>
+      <button class="add-btn" onclick="addToCart(event, 'God of Mischief')">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="product-card" data-filter="all" data-index="5" onclick="openModal(5)">
+    <div class="product-card-img">
+      <img src="23.jpg" alt="Persona Drop"/>
+      <div class="mannequin-preview">
+        <span class="preview-hint">Hover to explore</span>
+        <div class="mannequin-svg-wrap" id="msvg-5" style="color: #f5f0e8;">
+          <svg viewBox="0 0 500 500"><use href="#base-mannequin"></use></svg>
+          <img src="22.jpg" class="design-decal" alt="Persona Decal" />
+        </div>
+      </div>
+    </div>
+    <div class="product-info">
+      <p class="product-universe">ORIGINALS</p>
+      <h3 class="product-name">Persona Core</h3>
+      <p class="product-price">₹799</p>
+      <div class="size-row">
+        <button class="size-btn">S</button>
+        <button class="size-btn selected">M</button>
+        <button class="size-btn">L</button>
+        <button class="size-btn">XL</button>
+      </div>
+      <button class="add-btn" onclick="addToCart(event, 'Persona Core')">Add to Cart</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="modal-overlay" id="shopModal" onclick="closeModal()">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-visual">
+      <div class="modal-visual-bg"></div>
+      <div class="modal-mannequin">
+        <span class="modal-drag-hint">Change Color</span>
+        
+        <div class="mannequin-svg-wrap" id="modal-msvg" style="width: 220px; height: 360px;">
+          <svg viewBox="0 0 500 500" class="modal-mannequin-svg">
+            <use href="#base-mannequin"></use>
+          </svg>
+          <img id="modal-decal" src="" class="design-decal" style="width: 45%; top: 32%;" alt="Design Decal" />
+        </div>
+
+        <div class="modal-colors">
+          <div class="modal-swatch active" style="background:#111111" onclick="changeShirtColor(this, 'modal-msvg', '#111111')"></div>
+          <div class="modal-swatch" style="background:#f5f0e8" onclick="changeShirtColor(this, 'modal-msvg', '#f5f0e8')"></div>
+          <div class="modal-swatch" style="background:#2a2a2a" onclick="changeShirtColor(this, 'modal-msvg', '#2a2a2a')"></div>
+          <div class="modal-swatch" style="background:#e0dbd0" onclick="changeShirtColor(this, 'modal-msvg', '#e0dbd0')"></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-info">
+      <p class="modal-universe" id="modalUniverse">UNIVERSE</p>
+      <h2 class="modal-title" id="modalTitle">Product Name</h2>
+      <p class="modal-price" id="modalPrice">₹799</p>
+      <p class="modal-desc" id="modalDesc">
+        Premium heavy-weight cotton, oversized fit, drop shoulder. Designed for comfort and structured drape. Hand-finished graphic overlay.
+      </p>
+      
+      <p class="modal-label">Select Size</p>
+      <div class="modal-sizes">
+        <button class="modal-size-btn">S</button>
+        <button class="modal-size-btn selected">M</button>
+        <button class="modal-size-btn">L</button>
+        <button class="modal-size-btn">XL</button>
+      </div>
+
+      <button class="modal-add-btn" onclick="addToCart(event, 'modal')">Add to Cart — ₹799</button>
+      
+      <div class="modal-tags">
+        <span class="modal-tag">100% Cotton</span>
+        <span class="modal-tag">240 GSM</span>
+        <span class="modal-tag">Boxy Fit</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cart-toast" id="cartToast">Added to Collection</div>
+
+<footer class="shop-footer">
+  <p>© 2026 Persona. All Rights Reserved.</p>
+  <p><a href="#">Instagram</a> · <a href="#">Twitter</a></p>
+</footer>
+
+<script>
+  /* CURSOR */
+  const dot = document.getElementById('cursor-dot');
+  const ring = document.getElementById('cursor-ring');
+  document.addEventListener('mousemove', e => {
+    dot.style.left = e.clientX + 'px'; dot.style.top = e.clientY + 'px';
+    ring.style.left = e.clientX + 'px'; ring.style.top = e.clientY + 'px';
+  });
+  document.querySelectorAll('a, button, .product-card, .modal-swatch, .modal-close').forEach(el => {
+    el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
+    el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
+  });
+
+  /* FILTER */
+  const fbtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.product-card');
+  fbtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      fbtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      cards.forEach(c => {
+        if(f === 'all' || c.dataset.filter === f) {
+          c.style.display = 'block';
+          setTimeout(()=> { c.style.opacity = '1'; c.style.transform='translateY(0)'; }, 50);
+        } else {
+          c.style.opacity = '0'; c.style.transform='translateY(20px)';
+          setTimeout(()=> c.style.display = 'none', 300);
+        }
+      });
+    });
+  });
+
+  /* MODAL LOGIC */
+  function openModal(index) {
+    const card = document.querySelector(`.product-card[data-index="${index}"]`);
+    if(!card) return;
+
+    // Set correct decal
+    const decalSrc = card.querySelector('.design-decal').src;
+    document.getElementById('modal-decal').src = decalSrc;
+
+    // Map color variable
+    const colorWrap = document.getElementById('msvg-' + index);
+    const modalSvgWrap = document.getElementById('modal-msvg');
+    modalSvgWrap.style.color = colorWrap.style.color;
+
+    // Fill textual info
+    document.getElementById('modalTitle').innerText = card.querySelector('.product-name').innerText;
+    document.getElementById('modalPrice').innerText = card.querySelector('.product-price').innerText;
+    document.getElementById('modalUniverse').innerText = card.querySelector('.product-universe').innerText;
+    
+    document.getElementById('shopModal').classList.add('open');
+  }
+
+  function closeModal() {
+    document.getElementById('shopModal').classList.remove('open');
+  }
+
+  /* COLOR CHANGE */
+  function changeShirtColor(el, targetId, color) {
+    el.closest('.modal-colors').querySelectorAll('.modal-swatch').forEach(s => s.classList.remove('active'));
+    el.classList.add('active');
+    
+    const svgWrap = document.getElementById(targetId);
+    if (!svgWrap) return;
+    
+    // Changing the wrapper's color passes down to the SVG's "currentColor" path fill
+    svgWrap.style.color = color;
+  }
+
+  /* CART */
+  function addToCart(e, name) {
+    e.stopPropagation();
+    const toast = document.getElementById('cartToast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2500);
+  }
+</script>
+</body>
+</html>
