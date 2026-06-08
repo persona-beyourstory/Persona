@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PERSONA — Wear Your Story</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Cormorant+Garamond:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+<div class="cursor-follower" id="f1" style="font-size:1rem">✦</div>
+<div class="cursor-follower" id="f2" style="font-size:.85rem">★</div>
+<div class="cursor-follower" id="f3" style="font-size:1.1rem">◆</div>
+<div class="cursor-follower" id="f4" style="font-size:.75rem">✧</div>
+
+<nav>
+  <a href="#" class="nav-logo">Persona</a>
+  <ul class="nav-links">
+    <li><a href="#drops">Drops</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#how">How it works</a></li>
+    <li><a href="https://github.com/perosna-beyourstory" target="_blank">GitHub</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-bg"><canvas id="particleCanvas"></canvas></div>
+  <div class="hero-left">
+    <p class="hero-eyebrow">New Drop — SS 2025</p>
+    <h1 class="hero-title">Be Your<br/><em>Story.</em></h1>
+    <p class="hero-sub">Every shirt is a chapter. Every design, a statement. Wear what you are — not what you're told to be.</p>
+    <div class="hero-cta">
+      <a href="#drops" class="btn-primary">Shop the Drop</a>
+      <a href="#about" class="btn-ghost">Our story</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="design-badge"><span>NEW<br/>DROP<br/>★<br/>2025</span></div>
+    <div class="mannequin-wrapper">
+      <div class="mannequin-glow"></div>
+      <div class="shirt-colors" id="shirtColors">
+        <div class="shirt-swatch active" style="background:#1a1a1a" data-color="#1a1a1a"></div>
+        <div class="shirt-swatch" style="background:#c9a84c" data-color="#c9a84c"></div>
+        <div class="shirt-swatch" style="background:#2c1810" data-color="#2c1810"></div>
+        <div class="shirt-swatch" style="background:#0a1a0a" data-color="#0a1a0a"></div>
+        <div class="shirt-swatch" style="background:#f0dfa0" data-color="#f0dfa0"></div>
+      </div>
+      <div id="mannequin-3d">
+        <svg id="mannequin-svg" viewBox="0 0 280 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="bodyShade" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="rgba(0,0,0,0.35)"/>
+              <stop offset="45%" stop-color="rgba(255,255,255,0.04)"/>
+              <stop offset="100%" stop-color="rgba(0,0,0,0.28)"/>
+            </linearGradient>
+            <linearGradient id="skinGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#2a1a0e"/>
+              <stop offset="100%" stop-color="#1a0e06"/>
+            </linearGradient>
+            <filter id="glow2">
+              <feGaussianBlur stdDeviation="2.5" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <!-- Stand -->
+          <ellipse cx="140" cy="470" rx="56" ry="8" fill="rgba(201,168,76,.12)" stroke="rgba(201,168,76,.25)" stroke-width="1"/>
+          <rect x="133" y="405" width="14" height="68" rx="5" fill="rgba(201,168,76,.15)" stroke="rgba(201,168,76,.25)" stroke-width="1"/>
+          <line x1="88" y1="468" x2="192" y2="468" stroke="rgba(201,168,76,.25)" stroke-width="2"/>
+
+          <!-- Hips -->
+          <path d="M96 320 Q89 360 91 400 L189 400 Q191 360 184 320 Z" fill="rgba(201,168,76,.05)" stroke="rgba(201,168,76,.18)" stroke-width="1"/>
+
+          <!-- SHIRT body -->
+          <path id="shirt-body"
+            d="M72 132 L32 162 L54 198 L76 180 L76 318 L204 318 L204 180 L226 198 L248 162 L208 132 L184 147 Q140 168 96 147 Z"
+            fill="#1a1a1a" stroke="rgba(201,168,76,.32)" stroke-width="1.5"/>
+          <!-- Shade overlay -->
+          <path d="M72 132 L32 162 L54 198 L76 180 L76 318 L204 318 L204 180 L226 198 L248 162 L208 132 L184 147 Q140 168 96 147 Z"
+            fill="url(#bodyShade)" opacity=".65"/>
+
+          <!-- Shirt seam -->
+          <line x1="140" y1="168" x2="140" y2="316" stroke="rgba(201,168,76,.1)" stroke-width="1" stroke-dasharray="4,7"/>
+          <path d="M76 210 Q140 228 204 210" stroke="rgba(201,168,76,.08)" stroke-width="1" fill="none"/>
+
+          <!-- PERSONA print design -->
+          <g id="shirt-design" filter="url(#glow2)">
+            <polygon points="140,198 157,220 140,242 123,220" stroke="rgba(201,168,76,.85)" stroke-width="1.2" fill="rgba(201,168,76,.07)"/>
+            <polygon points="140,208 150,220 140,232 130,220" fill="rgba(201,168,76,.28)"/>
+            <line x1="112" y1="252" x2="168" y2="252" stroke="rgba(201,168,76,.28)" stroke-width=".8"/>
+            <text x="140" y="264" text-anchor="middle" font-family="serif" font-size="11" font-style="italic" fill="rgba(201,168,76,.9)" letter-spacing="3">PERSONA</text>
+            <text x="140" y="278" text-anchor="middle" font-family="monospace" font-size="5.5" fill="rgba(201,168,76,.38)" letter-spacing="4.5">BE YOUR STORY</text>
+          </g>
+
+          <!-- Collar -->
+          <path d="M112 147 Q140 162 168 147 Q155 135 140 132 Q125 135 112 147 Z"
+            fill="#0d0d0d" stroke="rgba(201,168,76,.4)" stroke-width="1.2"/>
+          <!-- Shoulder seams -->
+          <path d="M72 132 Q56 126 49 140 L76 160 Q81 150 96 147 Z" fill="#1a1a1a" stroke="rgba(201,168,76,.18)" stroke-width="1"/>
+          <path d="M208 132 Q224 126 231 140 L204 160 Q199 150 184 147 Z" fill="#1a1a1a" stroke="rgba(201,168,76,.18)" stroke-width="1"/>
+
+          <!-- Neck -->
+          <rect x="129" y="92" width="22" height="46" rx="9" fill="url(#skinGrad)" stroke="rgba(201,168,76,.18)" stroke-width="1"/>
+
+          <!-- Head -->
+          <ellipse cx="140" cy="70" rx="34" ry="41" fill="url(#skinGrad)" stroke="rgba(201,168,76,.22)" stroke-width="1.5"/>
+          <ellipse cx="133" cy="60" rx="9" ry="13" fill="rgba(255,255,255,0.035)"/>
+          <!-- Eyes -->
+          <ellipse cx="127" cy="62" rx="4.5" ry="5.5" fill="#060402" stroke="rgba(201,168,76,.5)" stroke-width="1"/>
+          <ellipse cx="153" cy="62" rx="4.5" ry="5.5" fill="#060402" stroke="rgba(201,168,76,.5)" stroke-width="1"/>
+          <circle cx="127" cy="63" r="2.2" fill="rgba(201,168,76,.85)"/>
+          <circle cx="153" cy="63" r="2.2" fill="rgba(201,168,76,.85)"/>
+          <circle cx="128.2" cy="61.8" r=".7" fill="rgba(255,255,255,.5)"/>
+          <circle cx="154.2" cy="61.8" r=".7" fill="rgba(255,255,255,.5)"/>
+          <!-- Eyebrows -->
+          <path d="M121 55 Q127 52 133 55" stroke="rgba(201,168,76,.65)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M147 55 Q153 52 159 55" stroke="rgba(201,168,76,.65)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <!-- Nose -->
+          <path d="M137 68 Q140 75 143 68" stroke="rgba(201,168,76,.28)" stroke-width="1" fill="none"/>
+          <!-- Lips -->
+          <path d="M131 79 Q140 85 149 79" stroke="rgba(201,168,76,.45)" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <path d="M133 79 Q140 77 147 79" stroke="rgba(201,168,76,.2)" stroke-width=".8" fill="none"/>
+          <!-- Hair -->
+          <path d="M107 56 Q110 18 140 16 Q170 18 173 56 Q163 36 140 34 Q117 36 107 56 Z"
+            fill="#060402" stroke="rgba(201,168,76,.12)" stroke-width="1"/>
+          <!-- Ears -->
+          <ellipse cx="107" cy="70" rx="6" ry="9" fill="url(#skinGrad)" stroke="rgba(201,168,76,.18)" stroke-width="1"/>
+          <ellipse cx="173" cy="70" rx="6" ry="9" fill="url(#skinGrad)" stroke="rgba(201,168,76,.18)" stroke-width="1"/>
+
+          <!-- Arms -->
+          <path d="M76 180 L56 285 Q53 300 60 306 L74 308 Q78 302 80 288 L90 198 Z"
+            fill="#1a1a1a" stroke="rgba(201,168,76,.18)" stroke-width="1"/>
+          <ellipse cx="65" cy="314" rx="12" ry="9" fill="url(#skinGrad)" stroke="rgba(201,168,76,.18)" stroke-width="1"/>
+          <path d="M204 180 L224 285 Q227 300 220 306 L206 308 Q202 302 200 288 L190 198 Z"
+            fill="#1a1a1a" stroke="rgba(201,168,76,.18)" stroke-width="1"/>
+          <ellipse cx="215" cy="314" rx="12" ry="9" fill="url(#skinGrad)" stroke="rgba(201,168,76,.18)" stroke-width="1"/>
+
+          <!-- Legs -->
+          <path d="M96 318 L89 400 L119 400 L131 348 L149 348 L161 400 L191 400 L184 318 Z"
+            fill="#100d00" stroke="rgba(201,168,76,.16)" stroke-width="1"/>
+          <line x1="114" y1="328" x2="106" y2="396" stroke="rgba(201,168,76,.08)" stroke-width="1"/>
+          <line x1="166" y1="328" x2="174" y2="396" stroke="rgba(201,168,76,.08)" stroke-width="1"/>
+
+          <!-- Shoes -->
+          <ellipse cx="104" cy="402" rx="18" ry="7" fill="#080600" stroke="rgba(201,168,76,.22)" stroke-width="1"/>
+          <ellipse cx="176" cy="402" rx="18" ry="7" fill="#080600" stroke="rgba(201,168,76,.22)" stroke-width="1"/>
+          <path d="M88 402 Q104 396 120 402" stroke="rgba(201,168,76,.38)" stroke-width="1" fill="none"/>
+          <path d="M160 402 Q176 396 192 402" stroke="rgba(201,168,76,.38)" stroke-width="1" fill="none"/>
+        </svg>
+      </div>
+      <div class="mannequin-hint">drag to rotate</div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Wear Your Story</span><span class="dot">✦</span>
+    <span>Limited Drops</span><span class="dot">✦</span>
+    <span>Crafted With Intent</span><span class="dot">✦</span>
+    <span>Be Your Persona</span><span class="dot">✦</span>
+    <span>Original Designs</span><span class="dot">✦</span>
+    <span>Express Everything</span><span class="dot">✦</span>
+    <span>Wear Your Story</span><span class="dot">✦</span>
+    <span>Limited Drops</span><span class="dot">✦</span>
+    <span>Crafted With Intent</span><span class="dot">✦</span>
+    <span>Be Your Persona</span><span class="dot">✦</span>
+    <span>Original Designs</span><span class="dot">✦</span>
+    <span>Express Everything</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div><div class="section-label">About</div></div>
+  <div class="about-content">
+    <h2>Clothing that<br/>speaks before<br/>you do.</h2>
+    <p>Persona is a curated T-shirt brand built on the belief that what you wear is the first sentence of your story. Each drop is limited, intentional, and designed for people who refuse to blend in.</p>
+    <div class="about-stats">
+      <div><div class="stat-num">12</div><div class="stat-label">Designs this<br/>season</div></div>
+      <div><div class="stat-num">100%</div><div class="stat-label">Organic<br/>cotton</div></div>
+      <div><div class="stat-num">∞</div><div class="stat-label">Your story,<br/>your rules</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="drops" id="drops">
+  <div class="drops-header">
+    <h2>Current<br/><em>Drops.</em></h2>
+    <a href="https://github.com/perosna-beyourstory" target="_blank">View all on GitHub →</a>
+  </div>
+  <div class="drops-grid">
+    <div class="drop-card">
+      <div class="drop-card-bg" style="background:radial-gradient(ellipse at 60% 30%,#1a1500 0%,#080600 100%)">
+        <svg width="180" height="180" viewBox="0 0 200 200">
+          <path d="M55 65 L25 85 L45 105 L45 165 L155 165 L155 105 L175 85 L145 65 L122 74 Q100 88 78 74 Z" fill="#110f00" stroke="rgba(201,168,76,.35)" stroke-width="1.5"/>
+          <polygon points="100,100 113,120 100,140 87,120" stroke="rgba(201,168,76,.6)" stroke-width="1" fill="rgba(201,168,76,.07)"/>
+          <text x="100" y="158" text-anchor="middle" font-family="serif" font-size="11" fill="rgba(201,168,76,.8)" font-style="italic" letter-spacing="2">MYTH</text>
+        </svg>
+      </div>
+      <div class="drop-overlay"></div>
+      <div class="drop-info"><p class="drop-tag">Drop 001</p><h3 class="drop-name">The Myth</h3><p class="drop-price">Coming Soon</p></div>
+    </div>
+    <div class="drop-card">
+      <div class="drop-card-bg" style="background:radial-gradient(ellipse at 40% 70%,#100c00 0%,#060400 100%)">
+        <svg width="180" height="180" viewBox="0 0 200 200">
+          <path d="M55 65 L25 85 L45 105 L45 165 L155 165 L155 105 L175 85 L145 65 L122 74 Q100 88 78 74 Z" fill="#0d0a00" stroke="rgba(201,168,76,.3)" stroke-width="1.5"/>
+          <circle cx="100" cy="120" r="28" stroke="rgba(201,168,76,.45)" stroke-width="1" fill="none"/>
+          <circle cx="100" cy="120" r="4" fill="rgba(201,168,76,.65)"/>
+          <line x1="100" y1="92" x2="100" y2="148" stroke="rgba(201,168,76,.22)" stroke-width="1"/>
+          <line x1="72" y1="120" x2="128" y2="120" stroke="rgba(201,168,76,.22)" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="drop-overlay"></div>
+      <div class="drop-info"><p class="drop-tag">Drop 002</p><h3 class="drop-name">The Anchor</h3><p class="drop-price">Coming Soon</p></div>
+    </div>
+    <div class="drop-card">
+      <div class="drop-card-bg" style="background:radial-gradient(ellipse at 50% 40%,#130e00 0%,#080600 100%)">
+        <svg width="180" height="180" viewBox="0 0 200 200">
+          <path d="M55 65 L25 85 L45 105 L45 165 L155 165 L155 105 L175 85 L145 65 L122 74 Q100 88 78 74 Z" fill="#0e0b00" stroke="rgba(201,168,76,.3)" stroke-width="1.5"/>
+          <path d="M82 95 L100 132 L118 95" stroke="rgba(201,168,76,.6)" stroke-width="1.5" fill="rgba(201,168,76,.06)"/>
+          <line x1="100" y1="92" x2="100" y2="144" stroke="rgba(201,168,76,.5)" stroke-width="1.5"/>
+          <circle cx="100" cy="88" r="5" fill="rgba(201,168,76,.55)"/>
+        </svg>
+      </div>
+      <div class="drop-overlay"></div>
+      <div class="drop-info"><p class="drop-tag">Drop 003</p><h3 class="drop-name">The Signal</h3><p class="drop-price">Coming Soon</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="philosophy">
+  <span class="section-label">Philosophy</span>
+  <blockquote>"Your clothes are not just fabric —<br/>they're the <em>loudest thing</em> about you<br/>before you say a word."</blockquote>
+  <cite>— Persona, est. 2025</cite>
+</section>
+
+<section class="how" id="how">
+  <div class="how-header"><h2>How it<br/>works.</h2></div>
+  <div class="how-steps">
+    <div class="step"><div class="step-num">01</div><h3 class="step-title">Browse the Drop</h3><p class="step-desc">Each collection is limited. Pick the design that speaks your story before it's gone.</p></div>
+    <div class="step"><div class="step-num">02</div><h3 class="step-title">Choose Your Fit</h3><p class="step-desc">Select your size. All shirts are unisex, made from 100% organic cotton.</p></div>
+    <div class="step"><div class="step-num">03</div><h3 class="step-title">We Print & Ship</h3><p class="step-desc">Your order is printed on demand and shipped directly to your door. No middlemen.</p></div>
+    <div class="step"><div class="step-num">04</div><h3 class="step-title">Wear Your Story</h3><p class="step-desc">Step out in something that actually means something. That's the Persona way.</p></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <h3>Persona.</h3>
+      <p>A T-shirt brand for the ones who live with intention. Limited drops. Unlimited stories.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px">
+      <div class="footer-links">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="#drops">Shop Drops</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#how">How it works</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://github.com/perosna-beyourstory" target="_blank">GitHub</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Persona. All rights reserved.</p>
+    <p><a href="https://github.com/perosna-beyourstory" target="_blank">github.com/perosna-beyourstory</a></p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
