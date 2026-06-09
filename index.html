@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PERSONA - Wear Your Mind</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Cormorant+Garamond:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shop.css" />
+  <link rel="stylesheet" href="persona-upgrade.css" />
+  <link rel="stylesheet" href="persona-bot.css" />
+</head>
+<body class="luxury-upgrade">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <nav class="lux-nav premium-nav" aria-label="Main navigation">
+    <a class="crown-logo" href="index.html" aria-label="Persona home"><span></span><span></span><span></span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" style="color:var(--gold)">Home</a></li>
+      <li><a href="shop.html">Collection</a></li>
+      <li><a href="#craft">Craft</a></li>
+      <li><a href="#lookbook">Lookbook</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="cart-nav nav-pill" href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+  </nav>
+
+  <main id="main">
+    <header class="lamp-hero">
+      <div class="lamp-stage" aria-hidden="true">
+        <div class="lamp-beam lamp-left"></div>
+        <div class="lamp-beam lamp-right"></div>
+        <div class="lamp-haze"></div>
+        <div class="lamp-glow"></div>
+        <div class="lamp-line"></div>
+      </div>
+
+      <section class="hero-grid premium-hero">
+        <div class="hero-copy">
+          <p class="eyebrow hero-kicker">Wear your mind.</p>
+          <h1 class="hero-title">
+            Be More
+            <span class="gooey-word" data-gooey-texts='["YOU.", "BOLD.", "RARE.", "LOUD."]'>
+              <svg class="gooey-filter" aria-hidden="true" focusable="false">
+                <defs>
+                  <filter id="gooey-threshold">
+                    <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 255 -140"></feColorMatrix>
+                  </filter>
+                </defs>
+              </svg>
+              <span class="gooey-stack" aria-label="You. Bold. Rare. Loud.">
+                <span class="gooey-text-one">YOU.</span>
+                <span class="gooey-text-two">BOLD.</span>
+              </span>
+            </span>
+          </h1>
+          <p class="hero-subtitle luxe-subtitle">Premium oversized streetwear for people who refuse to disappear into the crowd.</p>
+          <div class="hero-actions">
+            <a class="gold-btn glow-button" href="shop.html">Shop the Drop</a>
+            <a class="ghost-btn" href="#lookbook">Watch the Look</a>
+          </div>
+        </div>
+
+        <div class="hero-showcase" aria-label="Featured Persona designs">
+          <div class="floating-card hero-product hero-product-main glow-card">
+            <img src="./images/img_09.png" alt="Jack of Chaos t-shirt design" />
+            <div>
+              <p>Featured Drop</p>
+              <h2>Jack of Chaos</h2>
+              <span>Rs. 799</span>
+            </div>
+          </div>
+          <div class="floating-card hero-product hero-product-side glow-card">
+            <img src="./images/img_04.png" alt="Why So Serious geometric design" />
+            <p>Chaos creator</p>
+          </div>
+          <div class="hero-stat-panel glow-card">
+            <span>16</span>
+            <p>statement designs live now</p>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <section class="ticker-band" aria-label="Persona qualities">
+      <div class="ticker-track">
+        <span>Limited Drops</span>
+        <span>Premium Cotton</span>
+        <span>Oversized Fit</span>
+        <span>Graphic Streetwear</span>
+        <span>Built To Stand Out</span>
+        <span>Limited Drops</span>
+        <span>Premium Cotton</span>
+        <span>Oversized Fit</span>
+        <span>Graphic Streetwear</span>
+        <span>Built To Stand Out</span>
+      </div>
+    </section>
+
+    <section class="home-section collection-preview premium-collection" id="collection">
+      <div class="section-intro">
+        <p class="section-number">01 /</p>
+        <h2>The Collection</h2>
+        <p>Cards that react, designs that shout, and pieces that make the first move before you say a word.</p>
+        <a class="arrow-link" href="shop.html">View all collection</a>
+      </div>
+      <div class="preview-grid">
+        <a class="mini-product glow-card" href="shop.html">
+          <img src="./images/img_01.png" alt="The Gotham Times t-shirt" />
+          <h3>The Gotham Times</h3>
+          <p>Rs. 799</p>
+        </a>
+        <a class="mini-product glow-card" href="shop.html">
+          <img src="./images/img_04.png" alt="Why So Serious Geo t-shirt" />
+          <h3>Why So Serious?</h3>
+          <p>Rs. 799</p>
+        </a>
+        <a class="mini-product glow-card" href="shop.html">
+          <img src="./images/img_08.png" alt="I'm Your Villain t-shirt" />
+          <h3>I'm Your Villain</h3>
+          <p>Rs. 799</p>
+        </a>
+        <a class="mini-product glow-card" href="shop.html">
+          <img src="./images/img_12.png" alt="Great Responsibility t-shirt" />
+          <h3>Great Responsibility</h3>
+          <p>Rs. 799</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="craft-band" id="craft">
+      <div class="craft-copy">
+        <p class="section-number">02 /</p>
+        <h2>Made For The Main Character.</h2>
+        <p>Heavyweight feel, sharp graphics, smooth checkout, and a visual language that feels like a collector's drop instead of a normal shop.</p>
+      </div>
+      <div class="craft-grid">
+        <article class="craft-card glow-card">
+          <span>240 GSM</span>
+          <h3>Premium Cotton</h3>
+          <p>Soft structure with enough weight to feel expensive.</p>
+        </article>
+        <article class="craft-card glow-card">
+          <span>Fit</span>
+          <h3>Oversized Streetwear</h3>
+          <p>Relaxed silhouettes built for daily wear and drop photos.</p>
+        </article>
+        <article class="craft-card glow-card">
+          <span>Drop</span>
+          <h3>Limited Runs</h3>
+          <p>Designed to feel rare, not mass-produced.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="scroll-showcase" id="lookbook">
+      <div class="scroll-showcase-inner">
+        <div class="scroll-showcase-title">
+          <p class="section-number">03 /</p>
+          <h2>Scroll The Drop.</h2>
+          <p>A cinematic preview board inspired by the 3D scroll card you gave me.</p>
+        </div>
+        <div class="scroll-card" id="scrollCard">
+          <div class="scroll-card-screen">
+            <img src="./images/img_05.png" alt="World's Finest t-shirt" />
+            <img src="./images/img_10.png" alt="Deadpool t-shirt" />
+            <img src="./images/img_11.png" alt="Ironman t-shirt" />
+            <img src="./images/img_14.png" alt="Best Buds t-shirt" />
+            <img src="./images/img_16.png" alt="Why So Serious oversized t-shirt" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-section premium-story">
+      <div class="section-intro">
+        <p class="section-number">04 /</p>
+        <h2>Be Your Story.</h2>
+        <p>Customers should enter and feel the drop. The site now moves, glows, answers questions, and pushes them toward the collection without feeling desperate.</p>
+      </div>
+      <div class="story-cta glow-card">
+        <h2>Ready To Wear<br /><em>Your Story?</em></h2>
+        <a class="gold-btn glow-button" href="shop.html">Enter Collection</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="lux-footer" id="contact">
+    <a class="crown-logo" href="index.html" aria-label="Persona home"><span></span><span></span><span></span></a>
+    <div class="footer-nav">
+      <a href="shop.html">Collection</a>
+      <a href="#craft">Craft</a>
+      <a href="#lookbook">Lookbook</a>
+      <a href="cart.html">Cart</a>
+    </div>
+    <p>Persona streetwear - order now, payment follow-up later.</p>
+  </footer>
+
+  <script src="home.js"></script>
+  <script src="persona-bot.js"></script>
+</body>
+</html>
