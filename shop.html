@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PERSONA - Collection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Cormorant+Garamond:wght@300;400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shop.css" />
+  <link rel="stylesheet" href="persona-upgrade.css" />
+  <link rel="stylesheet" href="persona-bot.css" />
+</head>
+<body class="inner-lux collection-page">
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <nav class="lux-nav">
+    <a class="crown-logo" href="index.html" aria-label="Persona home"><span></span><span></span><span></span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html" style="color:var(--gold)">Collection</a></li>
+      <li><a href="index.html#craft">Craft</a></li>
+      <li><a href="index.html#lookbook">Lookbook</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a class="cart-nav" href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+  </nav>
+
+  <header class="page-header">
+    <h1>The <em>Collection.</em></h1>
+    <div class="page-header-meta">
+      <p>All designs | Limited stock</p>
+      <span>Rs. 799</span>
+      <p style="margin-top:4px">Payment follow-up after order</p>
+    </div>
+  </header>
+
+  <section class="page-signal" aria-label="Collection highlights">
+    <span>Hover the cards</span>
+    <span>Choose your universe</span>
+    <span>Open details before cart</span>
+  </section>
+
+  <div class="filter-bar" aria-label="Product filters">
+    <span class="filter-label">Filter |</span>
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="batman">Batman</button>
+    <button class="filter-btn" data-filter="joker">Joker</button>
+    <button class="filter-btn" data-filter="marvel">Marvel</button>
+    <button class="filter-btn" data-filter="deadpool">Deadpool</button>
+    <button class="filter-btn" data-filter="loki">Loki</button>
+  </div>
+
+  <main class="shop-grid" id="shopGrid"></main>
+
+  <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+    <button class="modal-close" id="modalClose" aria-label="Close product details">x</button>
+    <div class="modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-visual">
+        <div class="modal-visual-bg"></div>
+        <img class="modal-design-image" id="modalImage" src="" alt="" />
+      </div>
+      <div class="modal-info">
+        <p class="modal-universe" id="modalUniverse"></p>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <p class="modal-price" id="modalPrice"></p>
+        <p class="modal-desc" id="modalDesc"></p>
+        <p class="modal-label">Select Size</p>
+        <div class="modal-sizes" id="modalSizes"></div>
+        <button class="modal-add-btn" id="modalAddBtn">Add to Cart - Rs. 799</button>
+        <div class="modal-tags" id="modalTags"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-toast" id="cartToast">Added to cart</div>
+
+  <footer class="lux-footer">
+    <a class="crown-logo" href="index.html" aria-label="Persona home"><span></span><span></span><span></span></a>
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="cart.html">Cart</a>
+      <a href="checkout.html">Checkout</a>
+    </div>
+    <p>Premium streetwear made to stand out.</p>
+  </footer>
+
+  <script src="shop.js"></script>
+  <script src="site-effects.js"></script>
+  <script src="persona-bot.js"></script>
+</body>
+</html>
